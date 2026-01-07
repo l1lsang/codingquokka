@@ -1,5 +1,8 @@
-// src/components/home/Hero.jsx
+import { useNavigate } from "react-router-dom";
+
 export default function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="hero">
       <div className="hero-inner">
@@ -16,8 +19,19 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions">
-          <button className="btn primary">프로젝트 보기</button>
-          <button className="btn ghost">문의하기</button>
+          <button
+            className="btn primary"
+            onClick={() => navigate("/projects")}
+          >
+            프로젝트 보기
+          </button>
+
+          <button
+            className="btn ghost"
+            onClick={() => navigate("/contact")}
+          >
+            문의하기
+          </button>
         </div>
       </div>
     </section>
