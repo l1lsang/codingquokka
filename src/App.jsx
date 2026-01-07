@@ -6,7 +6,31 @@ import Home from "./pages/Home";
 // import About from "./pages/About";
 // import Projects from "./pages/Projects";
 // import Contact from "./pages/Contact";
+import { useEffect, useState } from "react";
 
+export default function ThemeToggle() {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  return (
+    <button
+      onClick={() =>
+        setTheme(theme === "light" ? "dark" : "light")
+      }
+      style={{
+        padding: "8px 14px",
+        borderRadius: "999px",
+        border: "none",
+        cursor: "pointer",
+      }}
+    >
+      {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+    </button>
+  );
+}
 export default function App() {
   return (
     <BrowserRouter>
