@@ -1,26 +1,63 @@
 /* ===============================
-   Home 공통
+   Theme Variables
 ================================ */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f8fafc;
+  --text: #0f172a;
+  --text-soft: #475569;
+  --primary: #2563eb;
+  --card: #ffffff;
+  --border: #e5e7eb;
+}
+
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --bg-soft: #0f172a;
+  --text: #e5e7eb;
+  --text-soft: #94a3b8;
+  --primary: #60a5fa;
+  --card: #111827;
+  --border: #1f2933;
+}
+
+/* ===============================
+   Global
+================================ */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
 .home {
   width: 100%;
   overflow-x: hidden;
 }
 
+/* 공통 컨테이너 (PC 기준축) */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 /* 섹션 공통 */
 section {
   width: 100%;
-  padding: 100px 20px;
+  padding: 100px 0;
 }
 
 .section-title {
-  max-width: 1100px;
-  margin: 0 auto 48px;
+  margin-bottom: 48px;
   font-size: 32px;
   font-weight: 800;
   text-align: center;
 }
 
-/* 버튼 공통 */
+/* ===============================
+   Buttons
+================================ */
 .btn {
   padding: 14px 28px;
   font-size: 16px;
@@ -31,30 +68,30 @@ section {
 }
 
 .btn.primary {
-  background: #2563eb;
+  background: var(--primary);
   color: #fff;
 }
 
 .btn.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
 }
 
 .btn.ghost {
   background: transparent;
-  color: #2563eb;
-  border: 2px solid #2563eb;
+  color: var(--primary);
+  border: 2px solid var(--primary);
 }
 
 .btn.ghost:hover {
-  background: #2563eb;
+  background: var(--primary);
   color: #fff;
 }
 
 .btn.link {
   margin-top: 32px;
   background: none;
-  color: #2563eb;
+  color: var(--primary);
   font-weight: 600;
 }
 
@@ -65,18 +102,20 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+  background: linear-gradient(
+    180deg,
+    var(--bg) 0%,
+    var(--bg-soft) 100%
+  );
 }
 
 .hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
   text-align: center;
 }
 
 .hero-greeting {
   font-size: 18px;
-  opacity: 0.8;
+  color: var(--text-soft);
   margin-bottom: 12px;
 }
 
@@ -88,12 +127,12 @@ section {
 }
 
 .hero-title strong {
-  color: #2563eb;
+  color: var(--primary);
 }
 
 .hero-desc {
   font-size: 20px;
-  opacity: 0.9;
+  color: var(--text-soft);
   margin-bottom: 36px;
 }
 
@@ -107,12 +146,10 @@ section {
    Tech Stack
 ================================ */
 .tech {
-  background: #fff;
+  background: var(--bg);
 }
 
 .tech-list {
-  max-width: 900px;
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -124,7 +161,8 @@ section {
 .tech-item {
   padding: 14px 22px;
   border-radius: 999px;
-  background: #f1f5f9;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
   font-weight: 600;
   transition: transform 0.2s ease;
 }
@@ -137,22 +175,21 @@ section {
    Featured Projects
 ================================ */
 .projects {
-  background: #f8fafc;
+  background: var(--bg-soft);
 }
 
 .project-grid {
-  max-width: 1100px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
 }
 
 .project-card {
-  background: #fff;
+  background: var(--card);
   border-radius: 20px;
   padding: 24px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
   transition: transform 0.25s ease;
 }
 
@@ -168,21 +205,25 @@ section {
 
 .project-card p {
   margin-top: 8px;
-  opacity: 0.7;
+  color: var(--text-soft);
 }
 
 .thumb {
   width: 100%;
   height: 180px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #c7d2fe, #818cf8);
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    #818cf8
+  );
 }
 
 /* ===============================
    Strength
 ================================ */
 .strength {
-  background: #fff;
+  background: var(--bg);
 }
 
 .strength-list {
@@ -194,15 +235,15 @@ section {
 }
 
 .strength-list li {
-  padding: 14px 0;
+  padding: 14px 0 14px 28px;
   position: relative;
 }
 
 .strength-list li::before {
   content: "✔";
   position: absolute;
-  left: -28px;
-  color: #2563eb;
+  left: 0;
+  color: var(--primary);
   font-weight: 700;
 }
 
@@ -210,7 +251,11 @@ section {
    CTA
 ================================ */
 .cta {
-  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    #4f46e5
+  );
   color: #fff;
   text-align: center;
 }
@@ -222,7 +267,7 @@ section {
 
 .cta .btn.primary {
   background: #fff;
-  color: #2563eb;
+  color: var(--primary);
 }
 
 .cta .btn.primary:hover {
@@ -234,7 +279,7 @@ section {
 ================================ */
 @media (max-width: 768px) {
   section {
-    padding: 80px 16px;
+    padding: 80px 0;
   }
 
   .hero-title {
@@ -247,5 +292,9 @@ section {
 
   .project-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
   }
 }
