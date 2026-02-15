@@ -1,38 +1,18 @@
-import { useNavigate } from "react-router-dom";
-
 export default function Hero() {
-  const navigate = useNavigate();
-
   return (
     <section className="hero">
       <div className="container hero-inner">
-        <p className="hero-greeting">👋 안녕하세요</p>
+        <p className="hero-greeting">장경민</p>
 
         <h1 className="hero-title">
-          기능으로 말하는 개발자 <br />
-          <strong>경민</strong>입니다
+          받은 사랑 흘러보내는 사람 <br />
+          되기로 했습니다.
         </h1>
 
         <p className="hero-desc">
-          React · Firebase · AI로 <br />
-          실제 사용되는 서비스를 만듭니다
+          저는 사람들에게 사랑을 많이 받았어요. <br />
+          하지만 그보다 주님께 받은 사랑을 매순간 떠오르려 합니다.
         </p>
-
-        <div className="hero-actions">
-          <button
-            className="btn primary"
-            onClick={() => navigate("/projects")}
-          >
-            프로젝트 보기
-          </button>
-
-          <button
-            className="btn ghost"
-            onClick={() => navigate("/contact")}
-          >
-            문의하기
-          </button>
-        </div>
       </div>
     </section>
   );
