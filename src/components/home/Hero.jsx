@@ -5,7 +5,7 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      <div className="hero-inner">
+      <div className="container hero-inner">
         <p className="hero-greeting">👋 안녕하세요</p>
 
         <h1 className="hero-title">
