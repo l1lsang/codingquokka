@@ -198,3 +198,34 @@
 .connect-link:hover {
   opacity: 0.6;
 }
+.declaration {
+  padding: 160px 20px;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.declaration-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.declaration h1 {
+  font-size: 32px;
+  margin-bottom: 80px;
+  letter-spacing: 4px;
+  font-weight: 500;
+}
+
+.declaration p {
+  font-size: 18px;
+  line-height: 2.1;
+  margin-bottom: 36px;
+  color: #333;
+}
+
+.declaration .date {
+  margin-top: 80px;
+  font-size: 14px;
+  color: #888;
+  letter-spacing: 2px;
+}
