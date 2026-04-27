@@ -14,7 +14,7 @@ export default function Current() {
         </p>
 
         <p className="current-text">
-          일도 하고 있지만 그래도 주변을 살피려 합니다
+          정신없이 세상을 살아가지만 그럼에도 잠시
           멈춰서서 주위에 도움이 필요한 사람이 있는지 살피고
           도움이 필요한 사람에게 도움을 주려고 노력합니다
         </p>
